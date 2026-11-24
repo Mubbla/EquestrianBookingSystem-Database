@@ -1,0 +1,132 @@
+<mxfile host="app.diagrams.net" agent="OpenAI">
+  <diagram id="riding-school-eer" name="EER Draft">
+    <mxGraphModel dx="1343" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#18324B;" value="EQUESTRIAN BOOKING SYSTEM — EER DRAFT" vertex="1">
+          <mxGeometry height="40" width="800" x="80" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#52677A;" value="Relationship diamonds use verbs • 0..N means zero or many • PK/FK labels show key roles" vertex="1">
+          <mxGeometry height="30" width="900" x="80" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="person" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#EAF2F8;strokeColor=#345B78;strokeWidth=2;fontSize=15;fontColor=#17324D;" value="&lt;b&gt;PERSON&lt;/b&gt;&lt;hr&gt;PK person_id&lt;br&gt;name&lt;br&gt;email&lt;br&gt;phone" vertex="1">
+          <mxGeometry height="130" width="280" x="270" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pisa" parent="1" style="shape=triangle;direction=south;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#B58B22;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#634C0D;" value="ISA&lt;br&gt;overlapping" vertex="1">
+          <mxGeometry height="65" width="90" x="365" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="WeotAdg0izpVj6AjU0sd-5" edge="1" parent="1" source="student" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#66788A;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=none;endArrow=none;curved=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="makes">
+          <mxGeometry relative="1" x="-0.0145" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="685" />
+            </Array>
+            <mxPoint x="230" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="student" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E6F4EA;strokeColor=#43845B;strokeWidth=2;fontSize=15;fontColor=#193B24;" value="&lt;b&gt;STUDENT&lt;/b&gt;&lt;hr&gt;PK/FK person_id&lt;br&gt;rider_height_cm" vertex="1">
+          <mxGeometry height="110" width="260" x="100" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="owner" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E6F4EA;strokeColor=#43845B;strokeWidth=2;fontSize=15;fontColor=#193B24;" value="&lt;b&gt;OWNER&lt;/b&gt;&lt;hr&gt;PK/FK person_id&lt;br&gt;contactable" vertex="1">
+          <mxGeometry height="110" width="260" x="460" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="horse" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#EAF2F8;strokeColor=#345B78;strokeWidth=2;fontSize=15;fontColor=#17324D;" value="&lt;b&gt;HORSE&lt;/b&gt;&lt;hr&gt;PK horse_id&lt;br&gt;name&lt;br&gt;age&lt;br&gt;bookable" vertex="1">
+          <mxGeometry height="130" width="270" x="1040" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="hisa" parent="1" style="shape=triangle;direction=south;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#B58B22;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#634C0D;" value="ISA&lt;br&gt;disjoint horse types" vertex="1">
+          <mxGeometry height="70" width="90" x="1130" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="pony" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FCE8E6;strokeColor=#B9574A;strokeWidth=2;fontSize=15;fontColor=#4A211D;" value="&lt;b&gt;PONY&lt;/b&gt;&lt;hr&gt;PK/FK horse_id&lt;br&gt;min_rider_length" vertex="1">
+          <mxGeometry height="110" width="260" x="890" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="fullhorse" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FCE8E6;strokeColor=#B9574A;strokeWidth=2;fontSize=15;fontColor=#4A211D;" value="&lt;b&gt;FULL_SIZE_HORSE&lt;/b&gt;&lt;hr&gt;PK/FK horse_id&lt;br&gt;min_rider_age" vertex="1">
+          <mxGeometry height="110" width="280" x="1200" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="lesson" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#EAF2F8;strokeColor=#345B78;strokeWidth=2;fontSize=15;fontColor=#17324D;" value="&lt;b&gt;LESSON&lt;/b&gt;&lt;hr&gt;PK lesson_id&lt;br&gt;starts_at&lt;br&gt;ends_at&lt;br&gt;capacity" vertex="1">
+          <mxGeometry height="130" width="270" x="100" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="booking" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#EAF2F8;strokeColor=#345B78;strokeWidth=2;fontSize=15;fontColor=#17324D;" value="&lt;b&gt;BOOKING&lt;/b&gt;&lt;hr&gt;PK booking_id&lt;div&gt;FK student_id&lt;/div&gt;&lt;div&gt;FK lesson_id&lt;/div&gt;&lt;div&gt;FK horse_id&lt;br&gt;booked_at&lt;br&gt;status&lt;br&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="340" x="640" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="owns" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#66788A;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#263746;" value="owns" vertex="1">
+          <mxGeometry height="70" width="110" x="800" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="makes" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#66788A;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#263746;" value="makes" vertex="1">
+          <mxGeometry height="70" width="110" x="390" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="has" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#66788A;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#263746;" value="has" vertex="1">
+          <mxGeometry height="70" width="110" x="435" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="assigned" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#66788A;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#263746;" value="is assigned to" vertex="1">
+          <mxGeometry height="75" width="130" x="1120" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="e_person_isa" edge="1" parent="1" source="person" style="endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="pisa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_isa_student" edge="1" parent="1" source="pisa" style="endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="student">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_isa_owner" edge="1" parent="1" source="pisa" style="endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="owner">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_horse_isa" edge="1" parent="1" source="horse" style="endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="hisa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_isa_pony" edge="1" parent="1" source="hisa" style="endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="pony">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_isa_fullhorse" edge="1" parent="1" source="hisa" style="endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="fullhorse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_owner_owns" edge="1" parent="1" source="owner" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="owns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_owns_horse" edge="1" parent="1" source="owns" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="horse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_makes_booking" edge="1" parent="1" source="makes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="booking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_lesson_has" edge="1" parent="1" source="lesson" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_has_booking" edge="1" parent="1" source="has" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="booking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_horse_assigned" edge="1" parent="1" source="horse" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="assigned">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_assigned_booking" edge="1" parent="1" source="assigned" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#66788A;strokeWidth=2;" target="booking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_many" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="1" vertex="1">
+          <mxGeometry height="24" width="60" x="230" y="536" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_one" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="0..*" vertex="1">
+          <mxGeometry height="24" width="60" x="765" y="776" as="geometry" />
+        </mxCell>
+        <mxCell id="c_lesson_many" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="1" vertex="1">
+          <mxGeometry height="24" width="60" x="375" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="c_lesson_one" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="0..*" vertex="1">
+          <mxGeometry height="24" width="60" x="575" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="c_horse_many" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="1" vertex="1">
+          <mxGeometry height="24" width="60" x="1320" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="c_horse_one" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="0..*" vertex="1">
+          <mxGeometry height="24" width="60" x="990" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="c_owner_many" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="1" vertex="1">
+          <mxGeometry height="24" width="60" x="720" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c_horse_owner" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1;fontColor=#455A64;" value="0..*" vertex="1">
+          <mxGeometry height="24" width="60" x="960" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="notes" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FFF8E7;strokeColor=#C8A65A;fontSize=13;fontColor=#4C4025;" value="&lt;b&gt;DESIGN DECISIONS&lt;/b&gt;&lt;br&gt;One person can be both a student and an owner.&lt;div&gt;Horse type is separate from ownership.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;BUSINESS RULES&lt;/b&gt;&lt;/div&gt;&lt;div&gt;A school-owned horse has no owner; a private horse has one owner and is not booked directly.&amp;nbsp;&lt;/div&gt;&lt;div&gt;A horse can not have overlapping bookings.&lt;/div&gt;&lt;div&gt;A student cannot book two horses for the same lesson.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="1380" x="100" y="1010" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
