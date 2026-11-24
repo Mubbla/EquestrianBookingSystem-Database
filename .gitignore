@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .kotlin
+.idea/inspectionProfiles/Project_Default.xml
 
 ### Eclipse ###
 .apt_generated
@@ -28,3 +29,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Local environment variables
+.env
