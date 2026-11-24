@@ -90,18 +90,35 @@ public class ConsoleUI {
                 continue;
             }
 
-            try {
-                // Parse as double to handle all numeric input in one try/catch,
-                // then apply type-specific validation rules.
-                double value = Double.parseDouble(input);
-
-                if (type.equals("age")) {
-                    if (value < 0) {
-                        printError("Ålder måste vara 0 eller högre.");
+            if (type.equals("age")) {
+                try {
+                    int age = Integer.parseInt(input);
+                    if (age < 0) {
+                        printError("Ålder kan inte vara negativ.");
                         continue;
                     }
                     return input;
+                } catch (NumberFormatException e) {
+                    printError("Åldern är orimligt hög. Ange ett giltigt heltal.");
+                    continue;
                 }
+            }
+
+            try {
+                if (type.equals("horsetype")) {
+                    int intValue = Integer.parseInt(input);
+                    if (intValue >= 1 && intValue <= 3) {
+                        return input;
+                    }
+                    printError("Försök med ett nummer på listan.");
+                }
+            }
+            catch (NumberFormatException e) {
+                printError("Försök med ett nummer i listan!");
+            }
+
+            try {
+                double value = Double.parseDouble(input);
                 if (type.equals("length")) {
                     if (value <= 0) {
                         printError("Orimlig längd.");
@@ -109,17 +126,8 @@ public class ConsoleUI {
                     }
                     return input;
                 }
-                if (type.equals("horsetype")) {
-                    int intValue = (int) value;
-                    if (intValue >= 1 && intValue <= 3) {
-                        return input;
-                    }
-                    printError("Försök med ett nummer på listan.");
-                }
             } catch (NumberFormatException e) {
-                if (type.equals("age")) printError("Ålder måste vara ett heltal.");
-                else if (type.equals("length")) printError("Längd måste vara ett decimaltal.");
-                else if (type.equals("horsetype")) printError("Försök med ett nummer i listan!");
+                printError("Längd måste vara ett decimaltal.");
             }
         }
     }
@@ -226,9 +234,10 @@ public class ConsoleUI {
         while (true) {
             printHeader("Hästinfo");
             String horseName = enterAndValidateInput("Namn:", "name");
-            int age = Integer.parseInt(enterAndValidateInput("Ålder:", "age"));
 
+            int age = Integer.parseInt(enterAndValidateInput("Ålder:", "age"));
             printHorseTypeMenu();
+
             int typeChoice = Integer.parseInt(enterAndValidateInput("Välj typ:", "horsetype"));
 
             Horse horse = null;

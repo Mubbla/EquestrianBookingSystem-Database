@@ -7,6 +7,9 @@ public abstract class Horse {
 
     // Constructor
     public Horse(String name, int age, boolean isAvailable) {
+        if (age < 0 || age > 40) {
+            throw new IllegalArgumentException("Hästens ålder måste vara mellan 0 och 39.");
+        }
         this.name = name;
         this.age = age;
         this.isAvailable = isAvailable;
