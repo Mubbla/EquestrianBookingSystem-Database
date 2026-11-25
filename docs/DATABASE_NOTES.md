@@ -53,8 +53,31 @@ can own several Horses.
 - A horse can appear in bookings for different lessons over time.
 - A horse cannot have overlapping bookings.
 
+## Booking Decisions
+
+- A booking links one student, one horse, and one lesson.
+- A cancelled booking remains in the database and gets the status `CANCELLED`.
+- Booking status can be `BOOKED`, `CANCELLED`, or `COMPLETED`.
+- A student cannot have two active bookings for the same lesson.
+- A student, horse, or lesson cannot be deleted while bookings refer to it.
+
+## Development Setup
+
+The project uses its own MySQL container, Compose configuration,
+and Docker volume. These are separate from the course lab
+environment.
+
+The project database uses localhost port 3320. The course lab
+uses a separate Compose setup and port.
+
+Local credentials are stored in `.env`. The `.env` file is
+excluded from Git, and the Compose file reads the variables
+from it.
+
 ## Next Step
 
-Map the EER diagram to MySQL tables, including primary keys,
-foreign keys, and the uniqueness rule for `student_id` and
-`lesson_id`.
+Run and verify the schema in MySQL.
+
+Decide how to implement the uniqueness rule for `student_id`
+and `lesson_id`: one active booking per student per lesson,
+while retaining cancelled bookings and allowing rebooking.
