@@ -32,3 +32,7 @@ bin/
 
 # Local environment variables
 .env
+
+# Other
+/target/
+/.idea/
