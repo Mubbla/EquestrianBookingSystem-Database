@@ -93,8 +93,5 @@ enabling the scheduler and handling time zones consistently.
 
 ## Next Step
 
-Run and verify the schema in MySQL.
-
-Decide how to implement the uniqueness rule for `student_id`
-and `lesson_id`: one active booking per student per lesson,
-while retaining cancelled bookings and allowing rebooking.
+Extend the database service to retrieve all horses, including 
+privately owned horses, and display them in the application.
