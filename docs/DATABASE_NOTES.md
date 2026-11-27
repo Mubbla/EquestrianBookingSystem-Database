@@ -47,6 +47,13 @@ can own several Horses.
 -  Horse type and ownership are modelled separately.
 - `Booking` links a student, a lesson, and a horse.
 
+## SQL Style
+
+Queries use explicit `JOIN ... ON` syntax to combine tables.
+Each relationship is stated next to the tables it connects,
+while `WHERE` is used for filtering. This makes queries with
+several tables easier to read and review.
+
 ## Business Rules
 
 - A student cannot book two horses for the same lesson.
@@ -73,6 +80,16 @@ uses a separate Compose setup and port.
 Local credentials are stored in `.env`. The `.env` file is
 excluded from Git, and the Compose file reads the variables
 from it.
+
+## Future Improvements
+
+In the current version, a booking is marked as `COMPLETED`
+by the application or staff after the lesson has finished.
+MySQL triggers respond to changes in table rows; they do not
+run just because time passes. A future version could use the
+MySQL Event Scheduler to periodically mark bookings as
+`COMPLETED` when their lesson has ended. This would require
+enabling the scheduler and handling time zones consistently.
 
 ## Next Step
 

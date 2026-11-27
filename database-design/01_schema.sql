@@ -1,3 +1,6 @@
+USE EquestrianBookingSystem;
+
+
 -- Stores information shared by all people in the system.
 CREATE TABLE Person (
     person_id INT NOT NULL AUTO_INCREMENT,
@@ -27,7 +30,7 @@ CREATE TABLE Owner (
 -- meets the booking requirements for a specific horse.
 CREATE TABLE Student (
     person_id INT NOT NULL,
-    rider_length DECIMAL(2,3),
+    rider_length DECIMAL(3,2),
     rider_age INT,
     
     PRIMARY KEY (person_id),
@@ -135,3 +138,6 @@ CREATE TABLE Booking (
     CONSTRAINT chk_booking_status
         CHECK (status IN ('BOOKED', 'CANCELLED', 'COMPLETED'))
 ) ENGINE=InnoDB;
+
+
+SHOW TABLES;
